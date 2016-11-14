@@ -1,0 +1,22 @@
+quit
+lllkajls;dkfj;alsdkfjal;sdkfjas;dlkfjalsd;kfjsdlkfj
+alsdkfj;alsdkjf
+;faldskjf
+;sdkjf;sll
+s'lfkjasd';ofk
+'ldskj'sd;lfk
+sdkfj
+\q
+\q
+\q
+\du
+SELECT usename FROM pg_user;
+SELECT usename FROM bloghack_development;
+SELECT usename FROM bloghack;
+\q
+\h
+\?
+\dt
+\dc
+\dt categories
+\s categories
