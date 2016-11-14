@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'binding_of_caller'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'paperclip'  # or gem 'carrierwave'
