@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'devise_zxcvbn'
 gem 'binding_of_caller'
 gem 'bootstrap-sass'
 gem 'devise'
