@@ -12,4 +12,8 @@ class StorefrontController < ApplicationController
   	@products = Product.where(brand: params[:brand])
     @brand = params[:brand]
   end
+
+  def splash
+    @products = Product.all
+  end
 end

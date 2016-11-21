@@ -5,9 +5,13 @@ post 'add_to_cart' => 'cart#add_to_cart'
 
   get 'checkout' => 'cart#checkout'
 
+post 'order_complete' => 'cart#order_complete'
+
 devise_for :users
 
-root 'storefront#all_items'
+root 'storefront#splash'
+
+	get 'all_items' => 'storefront#all_items'
 
   get 'categorical' => 'storefront#items_by_category' 
 

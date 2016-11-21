@@ -1,0 +1,38 @@
+<div class="center">
+
+  <h1>La<span class="glyphicon glyphicon-barcode"></span>T.</h1>
+  <section id="fuckit">
+  <div id="show-page-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% @products.each_with_index do |product, i| %>
+            <li data-target="#mycarousel" data-slide-to=#{i) class="#{'active' if i == 0}"></li>
+      <% end %></ol>
+  <!-- Carousel-inner -->
+    <div class="carousel-inner">
+      <div class="item active"><!-- class of active since it's the first item -->
+        <center><%= image_tag('splasher.jpg') %></center>
+      </div>
+      <% @products.each do |product| %> 
+        <div class="item">
+          <center><img src= <%= product.image.url(:medium) %> alt="" ></center>
+        </div>
+      <% end %>
+    </div>
+  <!-- Controls -->
+    <a class="carousel-control left" href="#show-page-carousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#show-page-carousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+  </section>
+  <section id="makit">
+  <% if user_signed_in? %>
+          <h3>& BUY ALL THE THINGS</h3>
+        <% else %>
+          <%= render 'devise/sessions/new' %>
+        <% end %>
+  </section>
+</div>

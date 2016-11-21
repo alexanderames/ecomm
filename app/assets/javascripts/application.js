@@ -16,3 +16,8 @@
 //= require global
 //= require turbolinks
 //= require_tree .
+
+
+$('.carousel').carousel({
+    interval: 3000;
+})

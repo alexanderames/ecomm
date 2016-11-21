@@ -3,25 +3,26 @@
   <head>
     <title>Ecomm</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+  <section id="makit">
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">The Store</a>
+        <a class="navbar-brand" href="/products"><span class="glyphicon glyphicon-barcode"></span></a>
       </div>
       <!-- Categories -->
       <div class="nav navbar-nav navbar-left">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <% @categories.each do |cat| %>
+            <% @categories[0..6].each do |cat| %>
               <li><%= link_to cat.name, categorical_path(cat_id: cat.id) %></li>
             <% end %>
-              <li><a href="/">All</a></li>
+              <li><a href="/all_items">All</a></li>
           </ul>
         </li>
       <!-- End Categories --> 
@@ -32,24 +33,28 @@
             <% @brands.each do |brand| %>
               <li><%= link_to brand, branding_path(brand: brand) %></li>
             <% end %>
-              <li><a href="/">All</a></li>
+              <li><a href="/all_items">All</a></li>
           </ul>
-        </li> 
+        </li>
       </div>
       <!-- End Brands -->    
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><a href="/view_order"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+          <li><%= link_to current_user.email %></li>
           <li><a href="/users/edit"><span class="glyphicon glyphicon-user"></span> Edit Prof</a></li>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="/users/sign_up"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
         <% end %>
       </ul>
     </div>
   </nav>
+  </section>
   	<div class="container">
+      <div class="center">
     	<%= yield %>
+      </div>
     </div>
   </body>
 </html>
