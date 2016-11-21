@@ -13,13 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require 'aws-sdk-v1'
-//= require 'aws-sdk'
 //= require global
 //= require turbolinks
 //= require_tree .
 
 
 $('.carousel').carousel({
-    interval: 3000;
+    interval: 3000
 })
